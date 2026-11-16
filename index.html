@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bonjour-A1</title>
 
 <style>
@@ -21,28 +22,36 @@
 }
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background:var(--background);
     color:var(--dark);
     line-height:1.6;
 }
 
+/* HEADER */
+
 header{
     background:var(--primary);
     color:white;
     text-align:center;
-    padding:2rem;
+    padding:3rem 1rem;
 }
 
 header h1{
-    font-size:2.5rem;
+    font-size:3rem;
+    margin-bottom:10px;
 }
 
 header p{
-    margin-top:10px;
+    font-size:1.1rem;
 }
 
+/* NAVIGATION */
+
 nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
     background:var(--dark);
     padding:1rem;
     text-align:center;
@@ -52,12 +61,14 @@ nav a{
     color:white;
     text-decoration:none;
     margin:0 15px;
-    font-weight:bold;
+    font-weight:600;
 }
 
 nav a:hover{
     color:var(--secondary);
 }
+
+/* CONTENT */
 
 section{
     padding:40px 10%;
@@ -65,10 +76,10 @@ section{
 
 .card{
     background:white;
-    padding:25px;
     border-radius:12px;
-    margin-bottom:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
 }
 
 h2{
@@ -76,9 +87,26 @@ h2{
     margin-bottom:15px;
 }
 
-ul{
+h3{
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+ul,ol{
     margin-left:20px;
 }
+
+/* Vocab Cards */
+
+.vocab-card{
+    background:var(--light);
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border-left:5px solid var(--primary);
+}
+
+/* Quiz */
 
 .quiz-question{
     margin-bottom:20px;
@@ -91,6 +119,7 @@ button{
     padding:12px 20px;
     border-radius:8px;
     cursor:pointer;
+    font-size:1rem;
 }
 
 button:hover{
@@ -102,27 +131,44 @@ button:hover{
     font-weight:bold;
 }
 
+/* AI Assistant */
+
 .chatbox{
-    background:white;
-    border-radius:10px;
-    padding:20px;
     margin-top:20px;
 }
 
 #userInput{
     width:100%;
-    padding:10px;
-    margin-top:10px;
+    padding:12px;
     border:1px solid #ccc;
-    border-radius:5px;
+    border-radius:6px;
 }
+
+/* Footer */
 
 footer{
     background:var(--primary);
     color:white;
     text-align:center;
     padding:20px;
-    margin-top:30px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    section{
+        padding:20px;
+    }
+
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
 }
 </style>
 </head>
@@ -137,114 +183,318 @@ footer{
 <nav>
     <a href="#vocab">Vocabulaire</a>
     <a href="#grammaire">Grammaire</a>
-    <a href="#devoir">Devoirs</a>
+    <a href="#lecon">Leçon</a>
+    <a href="#devoir">Devoir</a>
     <a href="#quiz">Quiz</a>
     <a href="#ia">BonjourBot</a>
 </nav>
 
-<section id="presentation">
-    <div class="card">
-        <h2>Bienvenue</h2>
-        <p>
-            Ce site est destiné aux adultes débutants en français (A1).
-            Vous apprendrez à vous présenter, à parler de vous,
-            de votre nationalité, de votre profession et de vos loisirs.
-        </p>
-    </div>
+<section>
+
+<div class="card">
+<h2>Bienvenue</h2>
+
+<p>
+Ce site aide les adultes débutants (A1) à apprendre
+à se présenter en français.
+</p>
+
+<p>
+À la fin du module, vous pourrez :
+</p>
+
+<ul>
+<li>Saluer quelqu'un</li>
+<li>Dire votre nom</li>
+<li>Parler de votre âge</li>
+<li>Indiquer votre nationalité</li>
+<li>Présenter votre profession</li>
+<li>Parler de vos loisirs</li>
+</ul>
+
+</div>
+
 </section>
 
 <section id="vocab">
-    <div class="card">
-        <h2>📚 Vocabulaire</h2>
 
-        <h3>Salutations</h3>
-        <ul>
-            <li>Bonjour</li>
-            <li>Bonsoir</li>
-            <li>Salut</li>
-            <li>Au revoir</li>
-        </ul>
+<div class="card">
 
-        <h3>Se présenter</h3>
-        <ul>
-            <li>Je m'appelle...</li>
-            <li>J'ai ... ans.</li>
-            <li>Je suis cambodgien(ne).</li>
-            <li>Je suis étudiant(e).</li>
-        </ul>
-    </div>
+<h2>📚 Vocabulaire</h2>
+
+<h3>Salutations</h3>
+
+<div class="vocab-card">
+Bonjour = Hello
+</div>
+
+<div class="vocab-card">
+Bonsoir = Good evening
+</div>
+
+<div class="vocab-card">
+Salut = Hi
+</div>
+
+<div class="vocab-card">
+Au revoir = Goodbye
+</div>
+
+<h3>Se présenter</h3>
+
+<div class="vocab-card">
+Je m'appelle...
+</div>
+
+<div class="vocab-card">
+J'ai ... ans.
+</div>
+
+<div class="vocab-card">
+Je suis cambodgien(ne).
+</div>
+
+<div class="vocab-card">
+Je suis étudiant(e).
+</div>
+
+</div>
+
 </section>
 
 <section id="grammaire">
-    <div class="card">
-        <h2>✏️ Grammaire</h2>
 
-        <h3>Le verbe ÊTRE</h3>
+<div class="card">
 
-        <ul>
-            <li>Je suis</li>
-            <li>Tu es</li>
-            <li>Il / Elle est</li>
-            <li>Nous sommes</li>
-            <li>Vous êtes</li>
-            <li>Ils / Elles sont</li>
-        </ul>
+<h2>✏️ Grammaire</h2>
 
-        <br>
+<h3>Le verbe ÊTRE</h3>
 
-        <h3>Exemple</h3>
+<ul>
+<li>Je suis</li>
+<li>Tu es</li>
+<li>Il / Elle est</li>
+<li>Nous sommes</li>
+<li>Vous êtes</li>
+<li>Ils / Elles sont</li>
+</ul>
 
-        <p>
-            Je suis Paul.
-            Je suis français.
-        </p>
-    </div>
+<h3>Exemple</h3>
+
+<p>
+Je suis Paul.
+<br>
+Je suis français.
+</p>
+
+</div>
+
+</section>
+
+<section id="lecon">
+
+<div class="card">
+
+<h2>🎓 Leçon modèle</h2>
+
+<p>Bonjour !</p>
+
+<p>Je m'appelle Marie.</p>
+
+<p>J'ai 25 ans.</p>
+
+<p>Je suis française.</p>
+
+<p>Je suis enseignante.</p>
+
+<p>J'aime la musique.</p>
+
+</div>
+
 </section>
 
 <section id="devoir">
-    <div class="card">
-        <h2>📝 Devoir</h2>
 
-        <p>Présentez-vous en 5 phrases.</p>
+<div class="card">
 
-        <ol>
-            <li>Votre nom</li>
-            <li>Votre âge</li>
-            <li>Votre nationalité</li>
-            <li>Votre profession</li>
-            <li>Un loisir</li>
-        </ol>
-    </div>
+<h2>📝 Devoir</h2>
+
+<p>Présentez-vous en cinq phrases.</p>
+
+<ol>
+<li>Votre nom</li>
+<li>Votre âge</li>
+<li>Votre nationalité</li>
+<li>Votre profession</li>
+<li>Un loisir</li>
+</ol>
+
+</div>
+
 </section>
 
 <section id="quiz">
-    <div class="card">
-        <h2>✅ Quiz</h2>
 
-        <div class="quiz-question">
-            <p><strong>Comment dit-on "Hello" en français ?</strong></p>
+<div class="card">
 
-            <input type="radio" name="q1" value="a"> Merci<br>
-            <input type="radio" name="q1" value="b"> Bonjour<br>
-            <input type="radio" name="q1" value="c"> Pardon<br>
-        </div>
+<h2>✅ Quiz</h2>
 
-        <button onclick="checkQuiz()">Vérifier</button>
+<div class="quiz-question">
 
-        <div id="result"></div>
-    </div>
+<p>
+<strong>Comment dit-on "Hello" en français ?</strong>
+</p>
+
+<label>
+<input type="radio" name="q1" value="a">
+Merci
+</label>
+<br>
+
+<label>
+<input type="radio" name="q1" value="b">
+Bonjour
+</label>
+<br>
+
+<label>
+<input type="radio" name="q1" value="c">
+Pardon
+</label>
+
+</div>
+
+<button onclick="checkQuiz()">
+Vérifier
+</button>
+
+<div id="result"></div>
+
+</div>
+
 </section>
 
 <section id="ia">
-    <div class="card">
-        <h2>🤖 BonjourBot</h2>
 
-        <p>
-            Votre assistant pédagogique.
-            Il explique les notions simplement,
-            propose des exercices et donne des indices.
-        </p>
+<div class="card">
 
-        <div class="chatbox">
-            <p id="botResponse">
-                Bonjour ! Pose-moi une question 
+<h2>🤖 BonjourBot</h2>
+
+<p>
+Je suis votre assistant pédagogique.
+Je vous aide à comprendre les leçons,
+à vous entraîner et à progresser.
+</p>
+
+<div class="chatbox">
+
+<p id="botResponse">
+Bonjour ! Pose-moi une question.
+</p>
+
+<input
+type="text"
+id="userInput"
+placeholder="Exemple : Comment utiliser le verbe être ?">
+
+<br><br>
+
+<button onclick="respondBot()">
+Envoyer
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Bonjour-A1
+</footer>
+
+<script>
+
+function checkQuiz(){
+
+    const answer =
+    document.querySelector('input[name="q1"]:checked');
+
+    if(!answer){
+
+        document.getElementById("result").innerHTML =
+        "Veuillez sélectionner une réponse.";
+
+        return;
+    }
+
+    if(answer.value==="b"){
+
+        document.getElementById("result").innerHTML =
+        "✅ Bravo ! Bonne réponse.";
+
+    }else{
+
+        document.getElementById("result").innerHTML =
+        "❌ Indice : c'est la salutation la plus utilisée pendant la journée.";
+
+    }
+}
+
+function respondBot(){
+
+    let userText =
+    document.getElementById("userInput")
+    .value
+    .trim()
+    .toLowerCase();
+
+    if(userText===""){
+
+        document.getElementById("botResponse").innerHTML =
+        "Veuillez saisir une question.";
+
+        return;
+    }
+
+    let response="";
+
+    if(userText.includes("être")){
+
+        response =
+        "Indice : le verbe être permet de dire qui vous êtes. Exemple : Je suis étudiant.";
+
+    }else if(userText.includes("nationalité")){
+
+        response =
+        "Exemple : Je suis cambodgien. Quelle est votre nationalité ?";
+
+    }else if(userText.includes("bonjour")){
+
+        response =
+        "Bonjour est une formule de salutation utilisée pendant la journée.";
+
+    }else{
+
+        response =
+        "Bonne réflexion ! Relisez la leçon puis essayez d'identifier un exemple similaire.";
+    }
+
+    document.getElementById("botResponse").innerHTML =
+    response;
+}
+
+document
+.getElementById("userInput")
+.addEventListener("keypress", function(event){
+
+    if(event.key==="Enter"){
+
+        respondBot();
+    }
+});
+
+</script>
+
+</body>
+</html>
